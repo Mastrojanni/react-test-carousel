@@ -1,18 +1,86 @@
 .app__container {
 
-    width: 100%;
+    min-width: 320px;
+    max-width: 1920px;
+
     height: 100vh;
 
-    align-items: center;
-    justify-content: center;
+    background: rgb(115, 115, 115);
 
     display: none;
+
+    .app__header {
+
+        max-height: 40%;
+
+        padding: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .app__title {
+
+            margin: 0;
+        }
+    }
+
+    .app__main {
+
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .app__footer {
+        
+        max-height: 40%;
+    }
+    
+    section {
+
+        width: 100%;
+        max-width: 85%;
+
+        margin: 0 auto;
+
+        padding: 20px;
+
+        border: 1px solid #000;
+    }
 }
 
 @media screen and (min-width: 320px) {
 
     .app__container {
 
-        display: flex;   
+        display: block;
+
     }
+}
+
+@media screen and (min-width: 768px) {
+    
+    .app__container {
+
+        .app__header {
+    
+            padding: 1.5%;
+        }
+
+        section {
+
+            padding: 1.5%;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .app__container {
+
+        margin: 0 auto;
+    }    
 }

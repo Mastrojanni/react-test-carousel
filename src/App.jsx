@@ -1,18 +1,30 @@
+// components
+import Carousel from './components/Carousel/Carousel'
+
 // style
 import './App.scss';
+import './main.scss';
 
 
 const App = () => {
 
-  return (
-    <div className="app__container">
-      <header></header>
+    return (
+        <div className="app__container">
 
-      <main></main>
+            <header className='app__header'>
+                <h1 className='app__title'>Carusel Test</h1>
+            </header>
 
-      <footer></footer>
-    </div>
-  );
+            <main className='app__main'>
+                <section>
+                    <Carousel />
+                </section>
+            </main>
+
+            <footer></footer>
+
+        </div>
+    );
 }
 
 export default App;
