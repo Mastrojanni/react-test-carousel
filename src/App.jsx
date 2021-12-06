@@ -12,7 +12,7 @@ const App = () => {
         <div className="app__container">
 
             <header className='app__header'>
-                <h1 className='app__title'>Carusel Test</h1>
+                <h1 className='app__title'>Carousel Test</h1>
             </header>
 
             <main className='app__main'>
