@@ -2,7 +2,7 @@ import './ButtonArrow.scss';
 
 
 const ButtonArrow = ({
-        face,
+        faceTo,
         onClick,
         disabled,
     }) => {
@@ -14,28 +14,32 @@ const ButtonArrow = ({
         onClick();
     };
     
-    if (face === 'left') {
+    if (faceTo === 'left') {
         suppClass = 'face--left';
     }
 
     arrowClassName += suppClass;
 
-    if (!onClick) {
+    if (disabled || !onClick) {
 
         return (
-            <button className='arrow__container' disabled={disabled}>
-                <div className={arrowClassName} />
+            <button className='button-arrow__container' disabled={disabled}>
+                <div className='arrow__container'>
+                    <div className={arrowClassName} />
+                </div>
             </button>
         );
     }
     
     return (
         <button
-            className='arrow__container pointer--active'
+            className='button-arrow__container pointer--active'
             onClick={arrowOnClickHandler}
             disabled={disabled}
         >
-            <div className={arrowClassName} />
+            <div className='arrow__container'>
+                <div className={arrowClassName} />
+            </div>
         </button>
     );
 };

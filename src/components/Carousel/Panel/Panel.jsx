@@ -2,19 +2,20 @@ import './Panel.scss';
 
 const Panel = ({
         active,
+        title,
+        children
     }) => {
 
-    let suppClass = '';
-    if (active) suppClass = ' active';
+    let suppClass = active ? ' active' : '';
 
     return (
         <div className={'panel__container' + suppClass}>
-            <h2>Panel 0</h2>
+            
+            <div className="title">
+                {title}
+            </div>
 
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae
-                magnam accusamus sed.
-            </p>
+            {children}
         </div>
     );
 };

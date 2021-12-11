@@ -6,6 +6,22 @@ import './App.scss';
 import './main.scss';
 
 
+const CAROUSEL_PANEL_CONTENT = [
+    {
+        title: <h2>Panel 0</h2>,
+        text: <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae magnam accusamus sed.</p>,
+    },
+    {
+        title: <h2>Panel 1</h2>,
+        text: <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae magnam accusamus sed.</p>,
+    },
+    {
+        title: <h2>Panel 2</h2>,
+        text: <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae magnam accusamus sed.</p>,
+    },
+];
+
+
 const App = () => {
 
     return (
@@ -17,7 +33,7 @@ const App = () => {
 
             <main className='app__main'>
                 <section>
-                    <Carousel />
+                    <Carousel panelsContent={CAROUSEL_PANEL_CONTENT} />
                 </section>
             </main>
 
