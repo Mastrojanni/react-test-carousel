@@ -1,12 +1,12 @@
 import './Panel.scss';
 
 const Panel = ({
-        active,
+        isActive,
         title,
         children
     }) => {
 
-    let suppClass = active ? ' active' : '';
+    let suppClass = isActive ? ' active' : '';
 
     return (
         <div className={'panel__container' + suppClass}>

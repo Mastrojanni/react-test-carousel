@@ -1,6 +1,6 @@
 .button-arrow__container {
 
-    min-width: 56px;
+    min-width: 56px;    
     min-height: 56px;
 
     margin: 0 auto;
@@ -10,7 +10,7 @@
 
     font-size: 16px;
 
-    display: inline;
+    display: inline-block;
 
     &.pointer--active {
 
@@ -25,19 +25,23 @@
             outline: 1px solid #000;
         }
 
-        &:active {
+        &.face--right:active, &.face--left:active {
 
             background: rgba(255, 255, 255, 0.1);
 
             transform: scale(0.98);
+
+            box-shadow:
+                inset 2px 2px 5px 0 rgba(0, 0, 0, 0.2),
+                inset -2px -2px 5px 0 rgba(255, 255, 255, 0.5);
         }
+        &.face--left:active { }
     }
 
     &:disabled {
 
         cursor: not-allowed;
     }
-
 
     .arrow__container {
 

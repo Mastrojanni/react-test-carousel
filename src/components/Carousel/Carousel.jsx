@@ -33,17 +33,44 @@ const Carousel = ({
     return (
         <div className='carousel__container'>
 
-            <ButtonArrow faceTo='left' onClick={onPrevArrowClick} />
+            <div className="carousel__header">
 
-            {panelsContent.map((panel, index)=>{
-                return (
-                    <Panel key={index} active={panelIndex === index} title={panel.title}>
-                        {panel.text}
-                    </Panel>
-                );
-            })}
+                <div className="nav-bullet__container">
 
-            <ButtonArrow face='right' onClick={onNextArrowClick} />
+                    {panelsContent.map((panel, index) => {
+                        const suppClass = (panelIndex === index) ? ' active' : '';
+
+                        return (
+                            <div
+                                key={'carousel_bullet_' + index}
+                                className={'bullet' + suppClass}
+                            />
+                        );
+                    })}
+
+                </div>
+
+            </div>
+
+            <div className="carousel__main">
+
+                <ButtonArrow faceTo='left' onClick={onPrevArrowClick} />
+
+                {panelsContent.map((panel, index)=>{
+                    return (
+                        <Panel
+                            key={'carousel_panel_' + index}
+                            isActive={panelIndex === index}
+                            title={panel.title}
+                        >
+                            {panel.text}
+                        </Panel>
+                    );
+                })}
+
+                <ButtonArrow face='right' onClick={onNextArrowClick} />
+
+            </div>
 
         </div>
     );
