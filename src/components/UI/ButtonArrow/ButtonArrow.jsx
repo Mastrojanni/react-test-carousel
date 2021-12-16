@@ -7,7 +7,6 @@ const ButtonArrow = ({
         disabled,
     }) => {
 
-    let arrowClassName = 'arrow__content';
     let suppClass = ' face--right';
 
     const arrowOnClickHandler = () => {
@@ -18,16 +17,15 @@ const ButtonArrow = ({
         suppClass = ' face--left';
     }
 
-    arrowClassName += suppClass;
-
     if (disabled || !onClick) {
         return (
             <button
                 className={'button-arrow__container' + suppClass}
                 disabled={disabled}
             >
-                <div className='arrow__container'>
-                    <div className={arrowClassName} />
+                <div className={'arrow__container' + suppClass}>
+                    <div className='arrow__line' />
+                    <div className='arrow__line' />
                 </div>
             </button>
         );
@@ -39,8 +37,9 @@ const ButtonArrow = ({
             onClick={arrowOnClickHandler}
             disabled={disabled}
         >
-            <div className='arrow__container'>
-                <div className={arrowClassName} />
+            <div className={'arrow__container' + suppClass}>
+                <div className='arrow__line' />
+                <div className='arrow__line' />
             </div>
         </button>
     );
