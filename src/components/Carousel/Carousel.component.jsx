@@ -6,6 +6,7 @@ import Panel from './Panel/Panel.component';
 // style (styled components)
 import {
     CarouselContainer,
+    CarouselMain,
 
     LeftArrowContainer,
     RightArrowContainer,
@@ -52,32 +53,7 @@ const Carousel = ({
 
     return (
         <CarouselContainer>
-
-            <LeftArrowContainer>
-                <ButtonArrow onClick={onPrevArrowClick}>
-
-                    <ArrowContainer faceTo='left'>
-                        <ArrowLine />
-                        <ArrowLine />
-                    </ArrowContainer>
-
-                </ButtonArrow>
-            </LeftArrowContainer>
-
-            <PanelsContainer>
-                {panelsContent.map((panel, index) =>{
-                    return (
-                        <Panel
-                            key={'CAROUSEL_PANEL_' + index}
-                            isVisible={currPanelVisible === index}
-                            title={panel.title}
-                        >
-                            {panel.text}
-                        </Panel>
-                    );
-                })}
-            </PanelsContainer>
-
+            
             <NavBulletsContainer>
                 {panelsContent.map((panel, index) => {
                     return (
@@ -90,16 +66,43 @@ const Carousel = ({
                 })}
             </NavBulletsContainer>
 
-            <RightArrowContainer>
-                <ButtonArrow onClick={onNextArrowClick}>
+            <CarouselMain>
+                <LeftArrowContainer>
+                    <ButtonArrow onClick={onPrevArrowClick}>
 
-                    <ArrowContainer faceTo='right'>
-                        <ArrowLine />
-                        <ArrowLine />
-                    </ArrowContainer>
+                        <ArrowContainer faceTo='left'>
+                            <ArrowLine />
+                            <ArrowLine />
+                        </ArrowContainer>
 
-                </ButtonArrow>
-            </RightArrowContainer>
+                    </ButtonArrow>
+                </LeftArrowContainer>
+
+                <PanelsContainer>
+                    {panelsContent.map((panel, index) =>{
+                        return (
+                            <Panel
+                                key={'CAROUSEL_PANEL_' + index}
+                                isVisible={currPanelVisible === index}
+                                title={panel.title}
+                            >
+                                {panel.text}
+                            </Panel>
+                        );
+                    })}
+                </PanelsContainer>
+
+                <RightArrowContainer>
+                    <ButtonArrow onClick={onNextArrowClick}>
+
+                        <ArrowContainer faceTo='right'>
+                            <ArrowLine />
+                            <ArrowLine />
+                        </ArrowContainer>
+
+                    </ButtonArrow>
+                </RightArrowContainer>
+            </CarouselMain>
 
         </CarouselContainer>
     );

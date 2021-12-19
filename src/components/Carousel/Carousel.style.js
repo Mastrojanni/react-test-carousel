@@ -17,11 +17,17 @@ export const CarouselContainer = styled.div`
     // height: 100vh;
 `;
 
+export const CarouselMain = styled.div`
+
+    display: inline-block;
+    width: 100%;
+`;
+
 export const LeftArrowContainer = styled(CenterToLeft)``;
 
 export const RightArrowContainer = styled(CenterToRight)``;
 
-export const NavBulletsContainer = styled(CenterToTop)`
+export const NavBulletsContainer = styled.div`
 
     margin: 5px;
     padding: 5px;

@@ -17,7 +17,7 @@ const panelFadeIn = keyframes`
 export const PanelContainer = styled.div`
 
     min-width: 40px;
-    width: 400px;
+    max-width: 400px;
 
     min-height: 600px;
 
