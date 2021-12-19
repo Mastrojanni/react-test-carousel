@@ -44,6 +44,9 @@ const Carousel = ({
                             <div
                                 key={'carousel_bullet_' + index}
                                 className={'bullet' + suppClass}
+                                onClick={() => {
+                                    setPanelIndex(index);
+                                }}
                             />
                         );
                     })}
