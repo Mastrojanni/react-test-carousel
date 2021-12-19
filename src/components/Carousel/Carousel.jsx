@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 
 // components
 import ButtonArrow from "./ButtonArrow/ButtonArrow";
@@ -12,20 +12,20 @@ const Carousel = ({
         panelsContent
     }) => {
 
-    const [panelIndex, setPanelIndex] = useState(0);
+    const [currPanelVisible, setCurrPanelVisible] = useState(0);
 
-    const panelsMaxLength = panelsContent.length - 1;
+    const maxLenghtOfPanels = panelsContent.length - 1;
 
     const onPrevArrowClick = () => {
-        setPanelIndex((prevState) => {
-            if (prevState === 0) return panelsMaxLength;
+        setCurrPanelVisible((prevState) => {
+            if (prevState === 0) return maxLenghtOfPanels;
             return --prevState;
         });
     };
 
     const onNextArrowClick = () => {
-        setPanelIndex((prevState) => {
-            if (prevState === panelsMaxLength) return 0;
+        setCurrPanelVisible((prevState) => {
+            if (prevState === maxLenghtOfPanels) return 0;
             return ++prevState;
         });
     };
@@ -38,14 +38,14 @@ const Carousel = ({
                 <div className="nav-bullet__container">
 
                     {panelsContent.map((panel, index) => {
-                        const suppClass = (panelIndex === index) ? ' active' : '';
+                        const suppClass = (currPanelVisible === index) ? ' active' : '';
 
                         return (
                             <div
                                 key={'carousel_bullet_' + index}
                                 className={'bullet' + suppClass}
                                 onClick={() => {
-                                    setPanelIndex(index);
+                                    setCurrPanelVisible(index);
                                 }}
                             />
                         );
@@ -63,7 +63,7 @@ const Carousel = ({
                     return (
                         <Panel
                             key={'carousel_panel_' + index}
-                            isActive={panelIndex === index}
+                            isActive={currPanelVisible === index}
                             title={panel.title}
                         >
                             {panel.text}
