@@ -1,18 +1,24 @@
 import { useState } from "react";
 
 // components
+import Panel from './Panel/Panel.component';
 
 // style (styled components)
 import {
     CarouselContainer,
+
     LeftArrowContainer,
     RightArrowContainer,
+
     NavBulletsContainer,
-    NavBullets
+    NavBullets,
+
+    PanelsContainer
 } from './Carousel.style';
 
 import {
     ButtonArrow,
+
     ArrowContainer,
     ArrowLine
 } from "./ButtonArrow.style";
@@ -48,15 +54,29 @@ const Carousel = ({
         <CarouselContainer>
 
             <LeftArrowContainer>
+                <ButtonArrow onClick={onPrevArrowClick}>
 
-                <ButtonArrow>
                     <ArrowContainer faceTo='left'>
                         <ArrowLine />
                         <ArrowLine />
                     </ArrowContainer>
-                </ButtonArrow>
 
+                </ButtonArrow>
             </LeftArrowContainer>
+
+            <PanelsContainer>
+                {panelsContent.map((panel, index) =>{
+                    return (
+                        <Panel
+                            key={'CAROUSEL_PANEL_' + index}
+                            isVisible={currPanelVisible === index}
+                            title={panel.title}
+                        >
+                            {panel.text}
+                        </Panel>
+                    );
+                })}
+            </PanelsContainer>
 
             <NavBulletsContainer>
                 {panelsContent.map((panel, index) => {
@@ -71,12 +91,13 @@ const Carousel = ({
             </NavBulletsContainer>
 
             <RightArrowContainer>
+                <ButtonArrow onClick={onNextArrowClick}>
 
-                <ButtonArrow>
                     <ArrowContainer faceTo='right'>
                         <ArrowLine />
                         <ArrowLine />
                     </ArrowContainer>
+
                 </ButtonArrow>
             </RightArrowContainer>
 

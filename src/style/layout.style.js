@@ -61,7 +61,7 @@ export const CenterToBottom = styled.div`
     transform: translateX(-50%);
 `;
 
-export const CenterItem = styled.div`
+export const PlaceToCenter = styled.div`
 
     display: inline-block;
 

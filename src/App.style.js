@@ -75,3 +75,10 @@ export const Section = styled.section`
 
     text-align: center;
 `;
+
+export const CarouselContainer = styled.div`
+
+    width: 50%;
+
+    margin: 0 auto;
+`;

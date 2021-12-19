@@ -7,8 +7,12 @@ export const CarouselContainer = styled.div`
 
     display: inline-block;
 
-    position: relative;
+    width: 100%;
+    height: 100%;
 
+    position: relative;     // !important for layout!
+
+    // for testing
     // width: 100%;
     // height: 100vh;
 `;
@@ -24,7 +28,7 @@ export const NavBulletsContainer = styled(CenterToTop)`
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     flex-direction: row;
 
@@ -57,4 +61,9 @@ export const NavBullets = styled.span`
 
         cursor: default;
     `}
+`;
+
+export const PanelsContainer = styled.div`
+
+    display: inline-block;
 `;

@@ -9,7 +9,8 @@ import {
     AppMain,
     AppFooter,
     AppTitle,
-    Section
+    Section,
+    CarouselContainer
 } from './App.style';
 
 
@@ -41,7 +42,11 @@ const App = () => {
 
                 <AppMain>
                     <Section>
-                        <Carousel panelsContent={CAROUSEL_PANEL_CONTENT} />
+                        
+                        <CarouselContainer>
+                            <Carousel panelsContent={CAROUSEL_PANEL_CONTENT} />
+                        </CarouselContainer>
+                        
                     </Section>
                 </AppMain>
 
