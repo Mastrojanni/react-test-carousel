@@ -1,9 +1,15 @@
 // components
-import Carousel from './components/Carousel/Carousel'
 
-// style
-import './App.scss';
-import './main.scss';
+// style (styled components)
+import { GlobalStyle } from './style/Global.style';
+import {
+    AppContainer,
+    AppHeader,
+    AppMain,
+    AppFooter,
+    AppTitle,
+    AppSection
+} from './App.style';
 
 
 const CAROUSEL_PANEL_CONTENT = [
@@ -23,23 +29,22 @@ const CAROUSEL_PANEL_CONTENT = [
 
 
 const App = () => {
-
     return (
-        <div className="app__container">
+        <>
+            <GlobalStyle />
 
-            <header className='app__header'>
-                <h1 className='app__title'>Carousel Test</h1>
-            </header>
+            <AppContainer>
+                <AppHeader>
+                    <AppTitle>Carousel Test</AppTitle>
+                </AppHeader>
 
-            <main className='app__main'>
-                <section>
-                    <Carousel panelsContent={CAROUSEL_PANEL_CONTENT} />
-                </section>
-            </main>
+                <AppMain>
+                    <AppSection></AppSection>
+                </AppMain>
 
-            <footer></footer>
-
-        </div>
+                <AppFooter></AppFooter>
+            </AppContainer>
+        </>
     );
 }
 
