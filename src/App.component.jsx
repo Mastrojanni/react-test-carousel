@@ -8,7 +8,7 @@ import {
     AppMain,
     AppFooter,
     AppTitle,
-    AppSection
+    Section
 } from './App.style';
 
 
@@ -39,7 +39,9 @@ const App = () => {
                 </AppHeader>
 
                 <AppMain>
-                    <AppSection></AppSection>
+                    <Section>
+
+                    </Section>
                 </AppMain>
 
                 <AppFooter></AppFooter>

@@ -55,7 +55,7 @@ export const AppTitle = styled.h1`
     margin: 0;
 `;
 
-export const AppSection = styled.section`
+export const Section = styled.section`
 
     width: 100%;
     max-width: 85%;
