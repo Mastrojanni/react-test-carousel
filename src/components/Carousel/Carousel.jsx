@@ -1,7 +1,7 @@
 import { Children, useState } from "react";
 
 // components
-import ButtonArrow from "../UI/ButtonArrow/ButtonArrow";
+import ButtonArrow from "./ButtonArrow/ButtonArrow";
 import Panel from "./Panel/Panel";
 
 // style
