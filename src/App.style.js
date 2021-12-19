@@ -72,4 +72,6 @@ export const Section = styled.section`
 
         padding: 2.5% 1.5%;
     }
+
+    text-align: center;
 `;

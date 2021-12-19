@@ -1,4 +1,5 @@
 // components
+import Carousel from './components/Carousel/Carousel.component';
 
 // style (styled components)
 import { GlobalStyle } from './style/Global.style';
@@ -40,7 +41,7 @@ const App = () => {
 
                 <AppMain>
                     <Section>
-
+                        <Carousel panelsContent={CAROUSEL_PANEL_CONTENT} />
                     </Section>
                 </AppMain>
 
