@@ -81,7 +81,10 @@ const Carousel = ({
 
                 <PanelsContainer>
 
-                    <Panel title={panelsContent[currPanelVisible].title}>
+                    <Panel
+                        key={currPanelVisible}
+                        title={panelsContent[currPanelVisible].title}
+                    >
                         {panelsContent[currPanelVisible].text}
                     </Panel>
                     
@@ -97,7 +100,7 @@ const Carousel = ({
 
                     </ButtonArrow>
                 </RightArrowContainer>
-                
+
             </CarouselMain>
 
         </CarouselContainer>

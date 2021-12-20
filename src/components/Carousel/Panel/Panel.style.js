@@ -35,6 +35,7 @@ export const PanelContainer = styled.div`
     text-align: left;
 
     display: inline-block;
+
     animation: 200ms ${panelFadeIn} ease-in-out;
 `;
 
