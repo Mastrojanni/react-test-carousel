@@ -6,13 +6,12 @@ import {
 
 
 const Panel = ({
-        isVisible,
         title,
         children
     }) => {
 
     return (
-        <PanelContainer isVisible={isVisible}>
+        <PanelContainer>
             <Title>{title}</Title>
 
             {children}

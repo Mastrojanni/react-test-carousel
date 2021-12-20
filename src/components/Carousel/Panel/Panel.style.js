@@ -34,13 +34,8 @@ export const PanelContainer = styled.div`
 
     text-align: left;
 
-    display: none;
-
-    ${({ isVisible }) => isVisible && css`
-
-        display: inline-block;
-        animation: 200ms ${panelFadeIn} ease-out;
-    `}
+    display: inline-block;
+    animation: 200ms ${panelFadeIn} ease-in-out;
 `;
 
 export const Title = styled.div`

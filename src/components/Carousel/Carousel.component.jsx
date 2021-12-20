@@ -67,6 +67,7 @@ const Carousel = ({
             </NavBulletsContainer>
 
             <CarouselMain>
+
                 <LeftArrowContainer>
                     <ButtonArrow onClick={onPrevArrowClick}>
 
@@ -79,17 +80,11 @@ const Carousel = ({
                 </LeftArrowContainer>
 
                 <PanelsContainer>
-                    {panelsContent.map((panel, index) =>{
-                        return (
-                            <Panel
-                                key={'CAROUSEL_PANEL_' + index}
-                                isVisible={currPanelVisible === index}
-                                title={panel.title}
-                            >
-                                {panel.text}
-                            </Panel>
-                        );
-                    })}
+
+                    <Panel title={panelsContent[currPanelVisible].title}>
+                        {panelsContent[currPanelVisible].text}
+                    </Panel>
+                    
                 </PanelsContainer>
 
                 <RightArrowContainer>
@@ -102,6 +97,7 @@ const Carousel = ({
 
                     </ButtonArrow>
                 </RightArrowContainer>
+                
             </CarouselMain>
 
         </CarouselContainer>
