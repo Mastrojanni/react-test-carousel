@@ -59,17 +59,12 @@ const Carousel = ({
 
                 <ButtonArrow faceTo='left' onClick={onPrevArrowClick} />
 
-                {panelsContent.map((panel, index)=>{
-                    return (
-                        <Panel
-                            key={'carousel_panel_' + index}
-                            isActive={currPanelVisible === index}
-                            title={panel.title}
-                        >
-                            {panel.text}
-                        </Panel>
-                    );
-                })}
+                <Panel
+                    key={'carousel_panel_' + currPanelVisible}
+                    title={panelsContent[currPanelVisible].title}
+                >
+                    {panelsContent[currPanelVisible].text}
+                </Panel>
 
                 <ButtonArrow face='right' onClick={onNextArrowClick} />
 

@@ -31,20 +31,16 @@
 
     // border: 1px solid rgba(255, 255, 255, 0.3);
     border: 2px solid rgba(255, 255, 255, 0.3);
+    
+    display: inline-block;
 
-    display: none;
-
-    @keyframes showPanel {
+    @keyframes panelFadeIn {
 
         from { opacity: 0; }
         to { opacity: 1; }
     }
     
-    &.active {
-
-        display: block;
-        animation: showPanel 200ms ease-in forwards;
-    }
+    animation: 200ms panelFadeIn ease-in-out;
 
     .title {
 
